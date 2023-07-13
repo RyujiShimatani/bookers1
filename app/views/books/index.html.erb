@@ -1,3 +1,12 @@
+<% if @book.errors.any? %>
+ <%= @book.errors.count %>件のエラーが発生しました
+ <ul>
+   <% @book.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+     <% end %>
+ </ul>
+<% end %>
+
 <h1>Books</h1>
 <% @books.each do |book| %>
 
@@ -8,8 +17,6 @@
   <%= link_to 'edit' , edit_book_path(book.id)  %>
   <%= link_to 'destroy' , book_path(book.id), method: :delete,"data-confirm" => "本当に削除しますか？"  %>
 <% end %>
-
-<!-- link_to '表示したい文字', book_path(1) -->
 
 
 
@@ -22,3 +29,4 @@
 
   <%= f.submit '投稿' %>
 <% end %>
+<%= flash[:notice] %>
