@@ -1,12 +1,15 @@
 <h1>Books</h1>
 <% @books.each do |book| %>
-  <!--<p>title</p>-->
+
   <span><%= book.title %></span>
-  <!--<p>body</p>-->
+
   <span><%= book.body %></span>
+  <%= link_to 'show' , book_path(book.id) %>
+  <%= link_to 'edit' , edit_book_path(book.id)  %>
+  <%= link_to 'destroy' , book_path(book.id), method: :delete,"data-confirm" => "本当に削除しますか？"  %>
 <% end %>
 
-
+<!-- link_to '表示したい文字', book_path(1) -->
 
 
 
