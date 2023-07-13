@@ -51,7 +51,7 @@ group :test do
   gem 'factory_bot_rails'
   gem 'faker'
   # Easy installation and use of web drivers to run system tests with browsers
-  
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
